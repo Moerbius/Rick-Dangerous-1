@@ -3,6 +3,9 @@
 
 #include <SDL3/SDL.h>
 #include "WindowManager.hpp"
+#include <memory>
+
+class Player; // Forward declaration
 
 class Engine {
 public:
@@ -21,13 +24,16 @@ public:
     SDL_Renderer* getRenderer() const { return m_windowManager.getRenderer(); }
 
 private:
-    Engine() = default;
-    ~Engine() = default;
+    Engine();
+    ~Engine();
     Engine(const Engine&) = delete;
     Engine& operator=(const Engine&) = delete;
 
     bool m_running = false;
+    uint64_t m_lastTime = 0;
+    
     WindowManager m_windowManager;
+    std::unique_ptr<Player> m_player;
 };
 
 #endif

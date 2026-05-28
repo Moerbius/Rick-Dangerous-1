@@ -20,6 +20,11 @@ bool WindowManager::init(const char* title, int width, int height) {
         return false;
     }
 
+    // Definir o blend mode para suportar transparência (PNGs)
+    if (!SDL_SetRenderDrawBlendMode(m_renderer, SDL_BLENDMODE_BLEND)) {
+        std::cerr << "Aviso: Erro ao definir blend mode para renderer: " << SDL_GetError() << std::endl;
+    }
+
     return true;
 }
 
