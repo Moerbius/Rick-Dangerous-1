@@ -23,7 +23,9 @@ public:
 
 private:
     ResourceManager() = default;
-    ~ResourceManager() { clear(); }
+    ~ResourceManager() = default;
+    ResourceManager(const ResourceManager&) = delete;
+    ResourceManager& operator=(const ResourceManager&) = delete;
 
     std::unordered_map<std::string, SDL_Texture*> m_textures;
 };

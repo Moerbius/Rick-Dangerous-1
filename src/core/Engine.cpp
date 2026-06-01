@@ -23,6 +23,7 @@ bool Engine::init(const char* title, int width, int height) {
 
     m_player = std::make_unique<Player>(m_windowManager.getRenderer(), 100.0f, 100.0f);
     m_lastTime = SDL_GetTicks();
+    m_isCleaned = false;
 
     m_running = true;
     std::cout << "Engine inicializada com sucesso (SDL3)." << std::endl;
@@ -67,6 +68,13 @@ void Engine::render() {
 }
 
 void Engine::clean() {
+    if (m_isCleaned) {
+        return;
+    }
+
+    m_isCleaned = true;
+    m_running = false;
+
     m_player.reset(); // Destruir o player antes do renderer/janela
     ResourceManager::getInstance().clear();
     m_windowManager.clean();

@@ -30,6 +30,7 @@ private:
     Engine& operator=(const Engine&) = delete;
 
     bool m_running = false;
+    bool m_isCleaned = false;
     uint64_t m_lastTime = 0;
     
     WindowManager m_windowManager;
