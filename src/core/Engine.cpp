@@ -1,6 +1,7 @@
 #include "Engine.hpp"
 #include "InputHandler.hpp"
 #include "../entities/Player.hpp"
+#include "../utils/ResourceManager.hpp"
 #include <iostream>
 #include <SDL3_image/SDL_image.h>
 
@@ -67,6 +68,7 @@ void Engine::render() {
 
 void Engine::clean() {
     m_player.reset(); // Destruir o player antes do renderer/janela
+    ResourceManager::getInstance().clear();
     m_windowManager.clean();
     SDL_Quit();
     std::cout << "Engine encerrada." << std::endl;
