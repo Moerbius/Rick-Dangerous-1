@@ -19,16 +19,19 @@
 - [ ] **Mapa (TileMap) - Render**: Desenhar tiles sólidos e vazios com cores/sprites para validar visualmente.
 - [ ] **Câmara**: Seguir o Rick conforme ele se move pelo mapa.
 - [ ] **Câmara - Limites**: Impedir a câmara de mostrar fora dos limites do mapa.
-- [ ] **Física (Collisions)**: Implementar detecção AABB para o Rick não atravessar o chão ou paredes.
-- [x] **Física (Atual)**: Chão temporário por limite inferior do ecrã já funcional no Player.
-- [ ] **Física (Collisions) - MVP**: Separar colisão horizontal e vertical contra tiles sólidos.
-- [ ] **Física (Collisions) - Estado**: Atualizar corretamente flag onGround após resolução de colisão.
-- [ ] **Animações**: Classe para gerir sequências de frames (Idle, Walk, Jump).
+- [ ] **Física (Colisões)**: Implementar detecção AABB para o Rick não atravessar o chão ou paredes.
+- [x] **Física (Parcial)**: Chão temporário por limite inferior do ecrã já funcional no Player.
+- [ ] **Física - MVP**: Separar colisão horizontal e vertical contra tiles sólidos.
+- [ ] **Física - Estado**: Atualizar corretamente flag onGround após resolução de colisão.
+- [ ] **Física - Integração**: Substituir o chão temporário por colisão real com TileMap (AABB por eixo).
+- [x] **Animações (Parcial)**: Seleção manual de frames por estado já funcional no Player (Idle/Walk/Jump/Crouch/Shoot/Stick).
+- [ ] **Animações**: Criar classe dedicada para gerir sequências de frames (Idle, Walk, Jump).
 - [ ] **Animações - MVP**: Implementar Animation com frameCount, frameDuration e loop.
-- [ ] **Animações - Integração**: Trocar animação do Rick por estado (Idle/Walk/Jump).
+- [ ] **Animações - Integração**: Migrar a lógica de animação do Player para Animation/estado dedicado (Idle/Walk/Jump).
 
 ## Milestone 4: Combate e Perigos
-- [ ] **Armas**: Implementar a lógica do bastão (melee), pistola e dinamite.
+- [x] **Armas (Parcial)**: Lógica base de bastão (melee), pistola e dinamite implementada no Player.
+- [ ] **Armas - Integração**: Separar sistema de armas do Player e adicionar colisão/dano em inimigos/hazards.
 - [ ] **Armadilhas (Hazards)**: Pedras que rolam, espinhos e dardos.
 - [ ] **Inimigos**: IA básica de patrulha e morte.
 
